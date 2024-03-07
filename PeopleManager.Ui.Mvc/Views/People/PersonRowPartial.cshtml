@@ -1,0 +1,22 @@
+﻿@model Person
+
+<tr>
+    <td>@Model.FirstName</td>
+    <td>@Model.LastName</td>
+    <td>
+        @if (!string.IsNullOrWhiteSpace(Model.Email))
+        {
+            <a href="mailto:@Model.Email">@Model.Email</a>
+        }
+    </td>
+    <td>
+        @if (Model.Organization is not null)
+        {
+            @Model.Organization.Name
+        }
+        else
+        {
+            @: No Organization
+        }
+    </td>
+</tr>
